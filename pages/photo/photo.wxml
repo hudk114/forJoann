@@ -1,0 +1,7 @@
+<!--photo.wxml-->
+<view class="container">
+  <map></map>
+  <view>
+    
+  </view>
+</view>
