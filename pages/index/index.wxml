@@ -8,6 +8,10 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
+  <view>
+    <navigator url="../camera/camera">camera</navigator>
+    <navigator url="../add-memory/add-memory">photo</navigator>
+  </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}，{{userInfo.nickName}}</text>
   </view>

@@ -1,0 +1,17 @@
+<view>
+  
+  <view class="upload-content">
+    <view class="upload-content-item"
+      bindtap="takeRecord">
+      录音
+    </view>
+    <view class="upload-content-item"
+      bindtap="takePic">
+      拍摄
+    </view>
+    <view class="upload-content-item"
+      bindtap="uploadPic">
+      上传图片
+    </view>
+  </view>
+</view>

@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/photo/photo",
-    "pages/camera/camera"
+    "pages/camera/camera",
+    "pages/add-memory/add-memory"
   ],
   "window":{
     "backgroundTextStyle":"light",
