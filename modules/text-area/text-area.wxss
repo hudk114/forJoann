@@ -1,0 +1,7 @@
+.input-text-outter {
+  padding: 0 30rpx;
+}
+
+.input-text {
+  width: 100%;
+}

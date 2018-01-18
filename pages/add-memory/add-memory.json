@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "component-text-area": "../../modules/text-area/text-area"
+  }
+}

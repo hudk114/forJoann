@@ -1,0 +1,12 @@
+<view>
+  <view class="input-text-outter">
+    <textarea 
+      class="input-text"
+      bindinput="handlerInput"
+      maxlength="{{2000}}">
+    </textarea>
+    <view class="txt-number-outter">
+      <view>{{textNum}}/2000</view>
+    </view>
+  </view>
+</view>

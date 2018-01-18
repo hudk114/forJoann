@@ -1,17 +1,25 @@
 <view>
-  
+  <component-text-area></component-text-area>
+  <view class="camera-content-outter">
+    <view class="camera-content" wx:for="{{imgs}}" wx:for-item="src" wx:key="{{imgs}}">
+      <image src="{{src}}"/>
+    </view>
+  </view>
   <view class="upload-content">
     <view class="upload-content-item"
       bindtap="takeRecord">
       录音
     </view>
     <view class="upload-content-item"
-      bindtap="takePic">
-      拍摄
+      bindtap="takeVideo">
+      摄像
     </view>
     <view class="upload-content-item"
-      bindtap="uploadPic">
-      上传图片
+      bindtap="takePhoto">
+      图片
     </view>
+  </view>
+  <view class="upload-button-outter">
+    <button type="primary" class="upload-button">上传回忆</button>
   </view>
 </view>

@@ -1,7 +1,9 @@
 // add-memory.js
 Page({
   data: {
-    src: ''
+    src: '',
+    imgs: [],
+    openCamera: false
   },
   takeRecord() {
     const recorderManager = wx.getRecorderManager()
@@ -21,32 +23,28 @@ Page({
     
     recorderManager.start(options)
   },
-  takePic() {
-    // TODO use createCameraContext
-    const cameraContext = wx.createCameraContext();
-    cameraContext.takePhoto({
-      quality: 'high',
+  takeVideo() {
+    wx.chooseVideo({
       success: (res) => {
-
+        console.log(res.tempFilePaths)
       },
       fail: (err) => {
 
       }
-    });
+    })
   },
-  uploadPic() {
+  takePhoto() {
     wx.chooseImage({
       success: (res) => {
-        console.log('success')
-        console.log(res)
+        const imgs = JSON.parse(JSON.stringify(this.data.imgs))
+        Array.prototype.push.apply(imgs, res.tempFilePaths)
+        this.setData({
+          imgs
+        })
       },
       fail: (err) => {
         console.log('err')
         console.log(err)
-      },
-      complete: (arg) => {
-        console.log('complete')
-        console.log(arg)
       }
     })
   },
