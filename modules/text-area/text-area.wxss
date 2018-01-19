@@ -1,7 +1,16 @@
 .input-text-outter {
   padding: 0 30rpx;
+  color: #999;
 }
 
 .input-text {
   width: 100%;
+}
+
+.txt-number {
+  float: right;
+}
+
+.clear {
+  clear: both;
 }

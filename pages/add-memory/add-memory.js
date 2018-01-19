@@ -48,6 +48,17 @@ Page({
       }
     })
   },
+  handleDelete(e) {
+    const index = e.target && e.target.dataset && e.target.dataset.index
+    if (index == null) {
+      return;
+    }
+    const imgs = JSON.parse(JSON.stringify(this.data.imgs))
+    imgs.splice(index, 1)    
+    this.setData({
+      imgs
+    })
+  },
   onLoad() {
     
   }

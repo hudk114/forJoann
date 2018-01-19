@@ -2,8 +2,12 @@
   <component-text-area></component-text-area>
   <view class="camera-content-outter">
     <view class="camera-content" wx:for="{{imgs}}" wx:for-item="src" wx:key="{{imgs}}">
-      <image src="{{src}}"/>
+      <view class="camera-close" bindtap="handleDelete" data-index="{{index}}"></view>
+      <image class="camera-picture" src="{{src}}"/>
     </view>
+  </view>
+  <view class="upload-button-outter">
+    <button type="primary" class="upload-button">上传回忆</button>
   </view>
   <view class="upload-content">
     <view class="upload-content-item"
@@ -18,8 +22,5 @@
       bindtap="takePhoto">
       图片
     </view>
-  </view>
-  <view class="upload-button-outter">
-    <button type="primary" class="upload-button">上传回忆</button>
   </view>
 </view>

@@ -1,3 +1,25 @@
+.camera-content {
+  position: relative;
+  width: 150rpx;
+  height: 150rpx;
+  display: inline-block;
+}
+
+.camera-close {
+  position: absolute;
+  top: -13rpx;
+  right: -13rpx;
+  width: 30rpx;
+  height: 30rpx;
+  background: red;
+  border-radius: 30rpx;
+}
+
+.camera-picture {
+  width: 150rpx;
+  height: 150rpx;
+}
+
 .upload-content {
   position: fixed;
   bottom: 0;
