@@ -3,16 +3,30 @@
   width: 150rpx;
   height: 150rpx;
   display: inline-block;
+  margin: 20rpx 0 0 30rpx;
 }
 
-.camera-close {
+.camera-close-outter {
   position: absolute;
   top: -13rpx;
   right: -13rpx;
-  width: 30rpx;
-  height: 30rpx;
-  background: red;
-  border-radius: 30rpx;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  font-size: 0;
+  border-radius: 15px;
+}
+
+.camera-close {
+  
+}
+
+.time-content-outter {
+  padding: 0 30rpx;
+}
+
+.picker {
+  color: #999;
 }
 
 .camera-picture {

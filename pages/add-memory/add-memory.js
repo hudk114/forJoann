@@ -3,7 +3,8 @@ Page({
   data: {
     src: '',
     imgs: [],
-    openCamera: false
+    openCamera: false,
+    date: ''
   },
   takeRecord() {
     const recorderManager = wx.getRecorderManager()
@@ -57,6 +58,12 @@ Page({
     imgs.splice(index, 1)    
     this.setData({
       imgs
+    })
+  },
+  handleDateChange(e) {
+    console.log(e.detail.value)
+    this.setData({
+      date: e.detail.value
     })
   },
   onLoad() {
