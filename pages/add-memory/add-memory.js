@@ -1,16 +1,42 @@
 // add-memory.js
+const util = require('../../utils/util')
+
 Page({
   data: {
     src: '',
     imgs: [],
     openCamera: false,
-    date: ''
+    date: '',
+    nowDate: '',
+    recordShow: false,
+    memoryText: '',
+    recorderManager: null,
   },
   takeRecord() {
-    const recorderManager = wx.getRecorderManager()
+    this.setData({
+      recordShow: true,
+      recorderManager: wx.getRecorderManager()
+    })
+  },
+  handleRecordClose() {
+    this.setData({
+      recordShow: false,
+      recorderManager: null
+    })
+  },
+  handleRecord() {
+    if (this.data.test) {
+      this.setData({
+        test: false
+      })
+      this.data.recorderManager.stop()
+      return;
+    }
+    this.data.recorderManager.onStart(() => {
 
-    recorderManager.onStart(() => {
-
+    })
+    this.data.recorderManager.onStop((tempFilePath) => {
+      console.log(tempFilePath)
     })
 
     const options = {
@@ -22,12 +48,21 @@ Page({
       frameSize: 50
     }
     
-    recorderManager.start(options)
+    this.data.recorderManager.start(options)
+    this.setData({
+      test: true
+    })
   },
   takeVideo() {
     wx.chooseVideo({
       success: (res) => {
-        console.log(res.tempFilePaths)
+        console.log(res)
+        console.log(res.tempFilePath)
+        const imgs = JSON.parse(JSON.stringify(this.data.imgs))
+        Array.prototype.push.call(imgs, res.tempFilePaths)
+        this.setData({
+          imgs
+        })
       },
       fail: (err) => {
 
@@ -61,12 +96,21 @@ Page({
     })
   },
   handleDateChange(e) {
-    console.log(e.detail.value)
     this.setData({
       date: e.detail.value
     })
   },
+  handleTextareaChange(e) {
+    this.setData({
+      memoryText: e.detail.value
+    })
+  },
+  uploadMemory() {
+    console.log(this.data.memoryText)
+  },
   onLoad() {
-    
+    this.setData({
+      nowDate: util.formatDate(new Date())
+    })
   }
 })

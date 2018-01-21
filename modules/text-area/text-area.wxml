@@ -3,7 +3,8 @@
     <textarea 
       class="input-text"
       bindinput="handlerInput"
-      maxlength="{{2000}}">
+      maxlength="{{2000}}"
+      value="{{value}}">
     </textarea>
     <view class="txt-number-outter">
       <view class="txt-number">{{textNum}}/2000</view>
