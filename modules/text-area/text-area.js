@@ -1,4 +1,4 @@
-Component({
+Component({ // eslint-disable-line
   data: (() => {
     return {
       textNum: 0
@@ -11,7 +11,7 @@ Component({
     }
   },
   methods: {
-    handlerInput(e) {
+    handlerInput (e) {
       this.setData({
         textNum: e.detail.value.length,
         value: e.detail.value

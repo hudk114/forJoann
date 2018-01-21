@@ -1,10 +1,10 @@
 // camera.js
-Page({
+Page({ // eslint-disable-line
   data: {
     src: ''
   },
-  takePhoto() {
-    const ctx = wx.createCameraContext()
+  takePhoto () {
+    const ctx = wx.createCameraContext() // eslint-disable-line
     console.log(ctx)
     ctx.takePhoto({
       quality: 'high',
@@ -16,11 +16,11 @@ Page({
       }
     })
   },
-  onLoad() {
+  onLoad () {
     const f = this.takePhoto
     setTimeout(f, 1000)
   },
-  error(e) {
+  error (e) {
     console.log(e.detail)
   }
 })

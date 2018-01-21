@@ -1,7 +1,7 @@
 // add-memory.js
 const util = require('../../utils/util')
 
-Page({
+Page({ // eslint-disable-line
   data: {
     src: '',
     imgs: [],
@@ -10,27 +10,27 @@ Page({
     nowDate: '',
     recordShow: false,
     memoryText: '',
-    recorderManager: null,
+    recorderManager: null
   },
-  takeRecord() {
+  takeRecord () {
     this.setData({
       recordShow: true,
-      recorderManager: wx.getRecorderManager()
+      recorderManager: wx.getRecorderManager() // eslint-disable-line
     })
   },
-  handleRecordClose() {
+  handleRecordClose () {
     this.setData({
       recordShow: false,
       recorderManager: null
     })
   },
-  handleRecord() {
+  handleRecord () {
     if (this.data.test) {
       this.setData({
         test: false
       })
       this.data.recorderManager.stop()
-      return;
+      return
     }
     this.data.recorderManager.onStart(() => {
 
@@ -47,14 +47,14 @@ Page({
       format: 'aac',
       frameSize: 50
     }
-    
+
     this.data.recorderManager.start(options)
     this.setData({
       test: true
     })
   },
-  takeVideo() {
-    wx.chooseVideo({
+  takeVideo () {
+    wx.chooseVideo({ // eslint-disable-line
       success: (res) => {
         console.log(res)
         console.log(res.tempFilePath)
@@ -65,12 +65,12 @@ Page({
         })
       },
       fail: (err) => {
-
+        console.log(err)
       }
     })
   },
-  takePhoto() {
-    wx.chooseImage({
+  takePhoto () {
+    wx.chooseImage({ // eslint-disable-line
       success: (res) => {
         const imgs = JSON.parse(JSON.stringify(this.data.imgs))
         Array.prototype.push.apply(imgs, res.tempFilePaths)
@@ -84,31 +84,31 @@ Page({
       }
     })
   },
-  handleDelete(e) {
+  handleDelete (e) {
     const index = e.target && e.target.dataset && e.target.dataset.index
     if (index == null) {
-      return;
+      return
     }
     const imgs = JSON.parse(JSON.stringify(this.data.imgs))
-    imgs.splice(index, 1)    
+    imgs.splice(index, 1)
     this.setData({
       imgs
     })
   },
-  handleDateChange(e) {
+  handleDateChange (e) {
     this.setData({
       date: e.detail.value
     })
   },
-  handleTextareaChange(e) {
+  handleTextareaChange (e) {
     this.setData({
       memoryText: e.detail.value
     })
   },
-  uploadMemory() {
+  uploadMemory () {
     console.log(this.data.memoryText)
   },
-  onLoad() {
+  onLoad () {
     this.setData({
       nowDate: util.formatDate(new Date())
     })
