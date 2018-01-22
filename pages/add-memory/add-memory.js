@@ -1,67 +1,54 @@
 // add-memory.js
 const util = require('../../utils/util')
 
-Page({ // eslint-disable-line
+Page({
   data: {
     src: '',
-    imgs: [],
+    imgList: [],
+    recordList: [],
     openCamera: false,
     date: '',
     nowDate: '',
-    recordShow: false,
-    memoryText: '',
-    recorderManager: null
+    recorderShow: false,
+    memoryText: ''
+  },
+  handleRecordLayoutClose () {
+    this.setData({
+      recorderShow: false
+    })
   },
   takeRecord () {
     this.setData({
-      recordShow: true,
-      recorderManager: wx.getRecorderManager() // eslint-disable-line
+      recorderShow: true
     })
   },
-  handleRecordClose () {
+  handleRecordOver (e) {
+    const recordList = JSON.parse(JSON.stringify(this.data.recordList))
+    recordList.push(e.detail.src)
     this.setData({
-      recordShow: false,
-      recorderManager: null
+      recordList
     })
   },
-  handleRecord () {
-    if (this.data.test) {
-      this.setData({
-        test: false
-      })
-      this.data.recorderManager.stop()
-      return
-    }
-    this.data.recorderManager.onStart(() => {
-
+  handleRecordPlay (e) {
+    const index = e.target && e.target.dataset && e.target.dataset.index
+    const iAC = wx.createInnerAudioContext()
+    iAC.src = this.data.recordList[index].tempFilePath
+    iAC.onError((err) => {
+      console.log(err)
     })
-    this.data.recorderManager.onStop((tempFilePath) => {
-      console.log(tempFilePath)
-    })
-
-    const options = {
-      duration: 10000,
-      sampleRate: 44100,
-      numberOfChannels: 1,
-      encodeBitRate: 192000,
-      format: 'aac',
-      frameSize: 50
-    }
-
-    this.data.recorderManager.start(options)
-    this.setData({
-      test: true
-    })
+    iAC.play()
   },
   takeVideo () {
-    wx.chooseVideo({ // eslint-disable-line
+    wx.chooseVideo({
       success: (res) => {
         console.log(res)
-        console.log(res.tempFilePath)
-        const imgs = JSON.parse(JSON.stringify(this.data.imgs))
-        Array.prototype.push.call(imgs, res.tempFilePaths)
+        const imgList = JSON.parse(JSON.stringify(this.data.imgList))
+        imgList.push({
+          src: res.tempFilePath,
+          type: 'video'
+        })
         this.setData({
-          imgs
+          imgList
         })
       },
       fail: (err) => {
@@ -70,12 +57,15 @@ Page({ // eslint-disable-line
     })
   },
   takePhoto () {
-    wx.chooseImage({ // eslint-disable-line
+    wx.chooseImage({
       success: (res) => {
-        const imgs = JSON.parse(JSON.stringify(this.data.imgs))
-        Array.prototype.push.apply(imgs, res.tempFilePaths)
+        const imgList = JSON.parse(JSON.stringify(this.data.imgList))
+        Array.prototype.push.apply(imgList, res.tempFilePaths.map(src => ({
+          src,
+          type: 'img'
+        })))
         this.setData({
-          imgs
+          imgList
         })
       },
       fail: (err) => {
@@ -89,10 +79,10 @@ Page({ // eslint-disable-line
     if (index == null) {
       return
     }
-    const imgs = JSON.parse(JSON.stringify(this.data.imgs))
-    imgs.splice(index, 1)
+    const imgList = JSON.parse(JSON.stringify(this.data.imgList))
+    imgList.splice(index, 1)
     this.setData({
-      imgs
+      imgList
     })
   },
   handleDateChange (e) {

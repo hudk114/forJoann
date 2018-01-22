@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "component-text-area": "../../modules/text-area/text-area"
+    "component-text-area": "../../modules/text-area/text-area",
+    "component-recorder": "../../modules/recorder/recorder"
   }
 }

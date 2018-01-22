@@ -1,2 +1,2 @@
-Page({ // eslint-disable-line
+Page({
 })

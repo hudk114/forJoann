@@ -1,4 +1,4 @@
-Component({ // eslint-disable-line
+Component({
   data: (() => {
     return {
       textNum: 0
@@ -6,7 +6,7 @@ Component({ // eslint-disable-line
   })(),
   properties: {
     value: {
-      type: 'String',
+      type: String,
       value: ''
     }
   },

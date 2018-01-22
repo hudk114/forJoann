@@ -1,3 +1,9 @@
 {
-  "extends": "standard"
+  "extends": "standard",
+  "globals": {
+    "wx": false,
+    "Component": false,
+    "Page": false,
+    "getApp": false
+  }
 }

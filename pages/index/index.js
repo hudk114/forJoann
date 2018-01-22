@@ -1,18 +1,18 @@
 // index.js
 // 获取应用实例
-const app = getApp() // eslint-disable-line
+const app = getApp()
 const time = require('../../utils/time.js')
 
-Page({ // eslint-disable-line
+Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo') // eslint-disable-line
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   // 事件处理函数
   bindViewTap: function () {
-    wx.navigateTo({ // eslint-disable-line
+    wx.navigateTo({
       url: '../camera/camera'
     })
     // wx.navigateTo({
@@ -42,7 +42,7 @@ Page({ // eslint-disable-line
       }
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({ // eslint-disable-line
+      wx.getUserInfo({
         success: res => {
           app.globalData.userInfo = res.userInfo
           this.setData({

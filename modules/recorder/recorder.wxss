@@ -1,0 +1,38 @@
+.recorder-layout {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(100, 100, 100, 0.3);
+}
+
+.recorder-content-outter {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: #fff;
+  color: #999;
+  padding-top: 20rpx;
+}
+
+.recorder-button-outter {
+  padding: 30rpx;
+}
+
+.recorder-button {
+  display: inline-block;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+}
+
+.recorder-start {
+  background: #666;
+}
+
+.recorder-end {
+  background: red;
+}

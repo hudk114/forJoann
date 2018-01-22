@@ -17,13 +17,20 @@
     </picker>
   </view>
 
+  <view>
+    <!-- TODO -->
+    <button wx:for="{{recordList}}" wx:for-item="record" wx:key="{{recordList}}" data-index="{{index}}" bindtap="handleRecordPlay">
+      {{index}}
+    </button>
+  </view>
+
   <view class="camera-content-outter">
-    <view class="camera-content" wx:for="{{imgs}}" wx:for-item="src" wx:key="{{imgs}}">
-      <!-- <view class="camera-close" bindtap="handleDelete" data-index="{{index}}"></view> -->
+    <view class="camera-content" wx:for="{{imgList}}" wx:for-item="img" wx:key="{{imgList}}">
       <view class="camera-close-outter">
         <icon type="clear" size="15" color="red" class="camera-close" bindtap="handleDelete" data-index="{{index}}" />
       </view>
-      <image class="camera-picture" src="{{src}}"/>
+      <image class="camera-picture" wx:if="{{img.type == 'img'}}" src="{{img.src}}"/>
+      <image class="camera-picture" wx:if="{{img.type == 'video'}}" src="./img/cover.jpg"/>
     </view>
   </view>
   
@@ -46,9 +53,9 @@
     </view>
   </view>
 
-  <view class="record-layout" wx:if="{{recordShow}}" bindtap="handleRecordClose">
-    <view class="record-content-outter">
-      <button catchtap="handleRecord">record</button>
-    </view>
-  </view>
+  <component-recorder
+    bind:close="handleRecordLayoutClose"
+    bind:recordOver="handleRecordOver"
+    recorderShow="{{recorderShow}}">
+  </component-recorder>
 </view>

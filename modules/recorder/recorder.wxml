@@ -1,0 +1,11 @@
+<view class="recorder-layout" wx:if="{{recorderShow}}" catchtap="handleClose">
+  <view class="recorder-content-outter">
+    <view>{{recordStart ? '点击一下结束录音' : '点击一下开始录音'}}</view>
+    <view class="recorder-button-outter">
+      <view
+        catchtap="handleRecord"
+        class="{{recordStart ? 'recorder-button recorder-end' : 'recorder-button recorder-start'}}">
+      </view>
+    </view>
+  </view>
+</view>
