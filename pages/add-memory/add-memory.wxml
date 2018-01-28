@@ -19,9 +19,17 @@
 
   <view>
     <!-- TODO -->
-    <button wx:for="{{recordList}}" wx:for-item="record" wx:key="{{recordList}}" data-index="{{index}}" bindtap="handleRecordPlay">
+    <component-record-fragment
+      wx:for="{{recordList}}"
+      wx:for-item="record"
+      wx:key="{{recordList}}"
+      url="{{record.tempFilePath}}"
+      index="{{index}}"
+      bind:recordDelete="handleRecordDelete">
+    </component-record-fragment>
+    <!-- <button wx:for="{{recordList}}" wx:for-item="record" wx:key="{{recordList}}" data-index="{{index}}" bindtap="handleRecordPlay">
       {{index}}
-    </button>
+    </button> -->
   </view>
 
   <view class="camera-content-outter">

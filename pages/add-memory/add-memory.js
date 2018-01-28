@@ -38,6 +38,18 @@ Page({
     })
     iAC.play()
   },
+  handleRecordDelete (e) {
+    const index = e.detail.index
+    if (index == null) {
+      return
+    }
+
+    const recordList = JSON.parse(JSON.stringify(this.data.recordList))
+    recordList.splice(index, 1)
+    this.setData({
+      recordList
+    })
+  },
   takeVideo () {
     wx.chooseVideo({
       success: (res) => {

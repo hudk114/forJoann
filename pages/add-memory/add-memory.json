@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "component-text-area": "../../modules/text-area/text-area",
+    "component-record-fragment": "../../modules/record-fragment/record-fragment",
     "component-recorder": "../../modules/recorder/recorder"
   }
 }

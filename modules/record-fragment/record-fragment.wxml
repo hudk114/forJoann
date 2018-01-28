@@ -1,0 +1,8 @@
+<!--modules/record-fragment/record-fragment.wxml-->
+<!--<text>modules/record-fragment/record-fragment.wxml</text>-->
+<view>
+  <button bindtap="handleRecordPlay" style="display: inline">
+    {{index}}
+  </button>
+  <icon type="clear" size="15" bindtap="handleDelete"></icon>
+</view>

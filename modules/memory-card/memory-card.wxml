@@ -1,0 +1,7 @@
+<!--modules/memory-card/memory-card.wxml-->
+<view class="memory-card-outter">
+  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+  <view>{{userInfo.userName}}</view>
+  <view>{{memoryText}}</view>
+  <view>{{memoryTime}}</view>
+</view>

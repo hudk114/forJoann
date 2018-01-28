@@ -11,6 +11,7 @@
   <view>
     <navigator url="../camera/camera">camera</navigator>
     <navigator url="../add-memory/add-memory">photo</navigator>
+    <navigator url="../memory-list/memory-list">memory</navigator>
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}，{{userInfo.nickName}}</text>

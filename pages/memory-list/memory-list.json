@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "component-memory-card": "../../modules/memory-card/memory-card"
+  }
+}

@@ -1,15 +1,16 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/logs/logs",
     "pages/photo/photo",
     "pages/camera/camera",
-    "pages/add-memory/add-memory"
+    "pages/add-memory/add-memory",
+    "pages/memory-list/memory-list"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "For Joann",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   }
 }
