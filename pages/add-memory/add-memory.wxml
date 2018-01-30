@@ -19,14 +19,10 @@
 
   <view>
     <!-- TODO -->
-    <component-record-fragment
-      wx:for="{{recordList}}"
-      wx:for-item="record"
-      wx:key="{{recordList}}"
-      url="{{record.tempFilePath}}"
-      index="{{index}}"
+    <component-record-list
+      recordList="{{recordList}}"
       bind:recordDelete="handleRecordDelete">
-    </component-record-fragment>
+    </component-record-list>
     <!-- <button wx:for="{{recordList}}" wx:for-item="record" wx:key="{{recordList}}" data-index="{{index}}" bindtap="handleRecordPlay">
       {{index}}
     </button> -->

@@ -9,9 +9,9 @@
     </block>
   </view>
   <view>
-    <navigator url="../camera/camera">camera</navigator>
-    <navigator url="../add-memory/add-memory">photo</navigator>
-    <navigator url="../memory-list/memory-list">memory</navigator>
+    <navigator url="../camera/camera" style="font-size: 30px;">camera</navigator>
+    <navigator url="../add-memory/add-memory" style="font-size: 30px;">photo</navigator>
+    <navigator url="../memory-list/memory-list" style="font-size: 30px;">memory</navigator>
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}，{{userInfo.nickName}}</text>
