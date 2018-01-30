@@ -19,7 +19,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    iAC: null,
+    iAC: null
   },
 
   /**
@@ -40,12 +40,12 @@ Component({
         this.setData({
           iAC: wx.createInnerAudioContext()
         })
-      } 
-      iAC.src = this.data.url
-      iAC.onError((err) => {
+      }
+      this.data.iAC.src = this.data.url
+      this.data.iAC.onError((err) => {
         console.log(err)
       })
-      iAC.play()
+      this.data.iAC.play()
     },
     handleRecordStop () {
 
