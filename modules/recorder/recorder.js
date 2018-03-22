@@ -39,6 +39,10 @@ Component({
   },
   methods: {
     handleClose () {
+      // record start will disable close
+      if (this.data.recordStart) {
+        return
+      }
       this.triggerEvent('close')
     },
     handleRecord () {

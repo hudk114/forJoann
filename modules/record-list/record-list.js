@@ -52,6 +52,12 @@ Component({
       })
       iAC.play()
     },
+    stopRecord () {
+      if (!this.data.iAC) {
+        return
+      }
+      this.data.iAC.stop()
+    },
     handleRecordStop () {
 
     }

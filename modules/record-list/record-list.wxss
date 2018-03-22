@@ -1,1 +1,38 @@
 /* modules/record-fragment/record-fragment.wxss */
+
+.record-content {
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-top: 20rpx;
+  vertical-align: top;
+}
+
+.record-fragment {
+  display: inline-block;
+  position: relative;
+  margin-left: 20rpx;
+  text-align: center;
+  height: 100%;
+  border-radius: 8rpx;
+  width: 200rpx;
+  background-color: #00c853;
+  vertical-align: top;
+}
+
+.triangle {
+  position: absolute;
+  left: -8rpx;
+  top: 20rpx;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 4rpx;
+  transform: rotate(45deg);
+  background-color: #00c853;
+}
+
+.record-close-button-outter {
+  display: inline-block;
+  margin-left: 20rpx;
+  height: 100%;
+  line-height: 1;
+}

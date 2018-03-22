@@ -1,9 +1,22 @@
 <!--modules/record-fragment/record-fragment.wxml-->
 <view>
-  <view wx:for="{{recordList}}" wx:for-index="index" wx:for-item="record" wx:key="index">
-    <button bindtap="handleRecordPlay" style="display: inline;" data-index="{{index}}">
-      {{index}}
-    </button>
-    <icon type="clear" size="15" bindtap="handleDelete" data-index="{{index}}"></icon>
+  <view
+    class="record-content"
+    wx:for="{{recordList}}" wx:for-index="index" wx:for-item="record" wx:key="index">
+    <view
+      class="record-fragment"
+      bindtap="handleRecordPlay"
+      data-index="{{index}}">
+      <view class="triangle"></view>
+    </view>
+    <view class="record-close-button-outter">
+      <icon
+        class="record-close-button"
+        type="clear"
+        size="15"
+        bindtap="handleDelete"
+        data-index="{{index}}">
+      </icon>
+    </view>
   </view>
 </view>

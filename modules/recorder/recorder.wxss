@@ -19,20 +19,35 @@
 }
 
 .recorder-button-outter {
+  position: relative;
+  height: 100rpx;
   padding: 30rpx;
 }
 
 .recorder-button {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  border: 10rpx solid #666;
   display: inline-block;
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 100rpx;
 }
 
 .recorder-start {
-  background: #666;
+  background: red;
 }
 
 .recorder-end {
+  background: #fff;
+}
+
+.record-inner {
   background: red;
+  position: absolute;
+  top: 60rpx;
+  left: 50%;
+  margin-left: -19rpx;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 10rpx;
+  display: inline-block;
 }

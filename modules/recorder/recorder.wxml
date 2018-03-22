@@ -6,6 +6,11 @@
         catchtap="handleRecord"
         class="{{recordStart ? 'recorder-button recorder-end' : 'recorder-button recorder-start'}}">
       </view>
+      <view
+        catchtap="handleRecord"
+        wx:if="{{recordStart}}"
+        class="record-inner">
+      </view> 
     </view>
   </view>
 </view>

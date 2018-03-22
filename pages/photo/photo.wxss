@@ -1,0 +1,33 @@
+.container {
+  margin-top: -100rpx;
+}
+
+.img {
+  animation: fadeIn 4s;
+  margin-top: 40rpx;
+  width: 640rpx;
+  height: 853rpx;
+}
+
+.interest {
+  animation: fadeOut 4s;
+  animation: fadeIn 4s;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

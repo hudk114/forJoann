@@ -12,15 +12,20 @@ Page({
   },
   // 事件处理函数
   bindViewTap: function () {
-    wx.navigateTo({
-      url: '../camera/camera'
-    })
+    // wx.navigateTo({
+    //   url: '../camera/camera'
+    // })
     // wx.navigateTo({
     //   url: '../photo/photo'
     // })
     // wx.navigateTo({
     //   url: '../logs/logs'
     // })
+  },
+  temp () {
+    wx.navigateTo({
+      url: '../photo/photo'
+    })
   },
   onLoad: function () {
     this.setData({

@@ -1,7 +1,17 @@
 <!--photo.wxml-->
 <view class="container">
-  <map></map>
-  <view>
-    
+  <view
+    class="interest"
+    wx:if="{{zero}}">
+    hi, so you found here.
   </view>
+  <view
+    class="interest"
+    wx:if="{{first}}">
+    I love you, girl.
+  </view>
+  <image
+    class="img"
+    wx:if="{{second}}"
+    src="./img/love.jpeg" />
 </view>

@@ -108,7 +108,16 @@ Page({
     })
   },
   uploadMemory () {
-    console.log(this.data.memoryText)
+    const params = {
+      text: this.data.memoryText,
+      time: this.data,
+      // TODO
+      imgList: '',
+      recordList: '',
+      videoList: ''
+    };
+    // text
+    console.log(params)
   },
   onLoad () {
     this.setData({
