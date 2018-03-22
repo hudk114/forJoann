@@ -1,0 +1,20 @@
+<template>
+  <view class="container">
+    <view class="userinfo">
+      <!-- <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button> -->
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <block wx:else>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+    <view>
+      <!-- <navigator url="../camera/camera" style="font-size: 30px;">camera</navigator> -->
+      <navigator url="../add-memory/add-memory" style="font-size: 30px;">photo</navigator>
+      <!-- <navigator url="../memory-list/memory-list" style="font-size: 30px;">memory</navigator> -->
+    </view>
+    <view class="usermotto">
+      <text bindtap="temp" class="user-motto">{{motto}}，{{userInfo.nickName}}</text>
+    </view>
+  </view>
+</template>
