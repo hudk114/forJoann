@@ -12,7 +12,9 @@
       {{record.dura}}
       <view class="{{record.play ? 'loading' : 'loading'}}"></view>
     </view>
-    <view class="record-close-button-outter">
+    <view
+      wx:if="{{canDelete}}"
+      class="record-close-button-outter">
       <icon
         class="record-close-button"
         type="clear"

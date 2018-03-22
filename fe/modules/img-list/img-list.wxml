@@ -1,0 +1,27 @@
+<view>
+  <view
+    class="camera-content"
+    wx:for="{{imgList}}"
+    wx:for-item="img"
+    wx:key="{{imgList}}">
+    <view
+      wx:if="{{canDelete}}"
+      class="camera-close-outter">
+      <icon
+        type="clear"
+        size="15"
+        color="red"
+        class="camera-close"
+        bindtap="handleDelete"
+        data-index="{{index}}" />
+    </view>
+    <image
+      class="camera-picture"
+      wx:if="{{img.type == 'img'}}"
+      src="{{img.src}}" />
+    <image
+      class="camera-picture"
+      wx:if="{{img.type == 'video'}}"
+      src="./img/cover.jpg" />
+  </view>
+</view>

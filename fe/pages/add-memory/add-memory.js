@@ -96,11 +96,12 @@ Page({
       }
     })
   },
-  handleDelete (e) {
-    const index = e.target && e.target.dataset && e.target.dataset.index
+  handleImgDelete (e) {
+    const index = e.detail.index
     if (index == null) {
       return
     }
+
     const imgList = JSON.parse(JSON.stringify(this.data.imgList))
     imgList.splice(index, 1)
     this.setData({

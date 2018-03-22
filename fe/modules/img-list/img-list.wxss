@@ -1,0 +1,25 @@
+.camera-content {
+  position: relative;
+  width: 150rpx;
+  height: 150rpx;
+  display: inline-block;
+  margin: 20rpx 0 0 30rpx;
+}
+
+.camera-close-outter {
+  position: absolute;
+  top: -13rpx;
+  right: -13rpx;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  font-size: 0;
+  border-radius: 15px;
+}
+
+.camera-close {}
+
+.camera-picture {
+  width: 150rpx;
+  height: 150rpx;
+}

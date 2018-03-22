@@ -7,6 +7,10 @@ Component({
     recordList: {
       type: Array,
       value: []
+    },
+    canDelete: {
+      type: Boolean,
+      value: false
     }
   },
   data: {
