@@ -4,10 +4,13 @@
     class="record-content"
     wx:for="{{recordList}}" wx:for-index="index" wx:for-item="record" wx:key="index">
     <view
-      class="record-fragment"
+      class="{{record.play ? 'record-fragment record-play' : 'record-fragment'}}"
       bindtap="handleRecordPlay"
-      data-index="{{index}}">
-      <view class="triangle"></view>
+      data-index="{{index}}"
+      style="{{record.style}}">
+      <view class="{{record.play ? 'triangle record-play' : 'triangle'}}"></view>
+      {{record.dura}}
+      <view class="{{record.play ? 'loading' : 'loading'}}"></view>
     </view>
     <view class="record-close-button-outter">
       <icon

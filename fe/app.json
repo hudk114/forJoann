@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/add-memory/add-memory",
     "pages/index/index",
     "pages/logs/logs",
     "pages/photo/photo",
     "pages/camera/camera",
-    "pages/add-memory/add-memory",
     "pages/memory-list/memory-list"
   ],
   "window": {

@@ -23,8 +23,18 @@ Page({
     })
   },
   handleRecordOver (e) {
+    const duration = e.detail.src.duration;
+    const detail = {
+      ...e.detail.src,
+      // style: `width: 100rpx;`
+      // style: `width: 500rpx;`
+      style: `width: ${100 + 400 * duration / 60000}rpx;`,
+      dura: `${Math.floor(duration / 1000)}s`,
+      play: false
+    };
+
     const recordList = JSON.parse(JSON.stringify(this.data.recordList))
-    recordList.push(e.detail.src)
+    recordList.push(detail)
     this.setData({
       recordList
     })
@@ -110,13 +120,17 @@ Page({
   uploadMemory () {
     const params = {
       text: this.data.memoryText,
-      time: this.data,
-      // TODO
-      imgList: '',
-      recordList: '',
-      videoList: ''
+      time: this.data.date,
+      imgList: this.data.imgList.filter(img => img.type === 'img'),
+      recordList: this.data.recordList,
+      videoList: this.data.imgList.filter(img => img.type === 'video')
     };
-    // text
+    // TODO 断言库
+    if (params.time === '') {
+      params.time = this.data.nowDate
+    };
+
+    // TODO 发送文件及params到后端
     console.log(params)
   },
   onLoad () {

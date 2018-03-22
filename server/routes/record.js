@@ -5,7 +5,7 @@ router.get('/list', async (ctx, next) => {
   ctx.body = 'asdfasd';
 });
 
-router.post('/upload', async (ctx, next) => {
+router.post('/upload/:type', async (ctx, next) => {
   console.log('333');
   ctx.body = 'asdfasd';
 });

@@ -39,12 +39,14 @@ Component({
   },
   methods: {
     handleClose () {
+      console.log('123')
       // record start will disable close
       if (this.data.recordStart) {
         return
       }
       this.triggerEvent('close')
     },
+    handleNull () {},
     handleRecord () {
       if (this.data.recordStart) {
         this.data.recorderManager.stop()
@@ -56,11 +58,7 @@ Component({
       }
 
       const options = {
-        duration: 10000,
-        sampleRate: 44100,
-        numberOfChannels: 1,
-        encodeBitRate: 192000,
-        format: 'aac',
+        format: 'mp3',
         frameSize: 50
       }
 
