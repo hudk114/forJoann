@@ -36,7 +36,7 @@ Component({
       const index = e.target && e.target.dataset && e.target.dataset.index
       const recordList = JSON.parse(JSON.stringify(this.data.recordList))
       this.setAllStatus(recordList, 'play', false)
-      
+
       if (typeof index !== 'number') {
         return
       }

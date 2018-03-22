@@ -4,8 +4,8 @@
   "description": "ok this is a wechat program for my gf",
   "main": "app.js",
   "scripts": {
-    "eslint": "eslint ./modules/**/*.js ./pages/**/*.js",
-    "eslint-fix": "eslint ./modules/**/*.js ./pages/**/*.js --fix"
+    "eslint": "eslint ./fe/modules/**/*.js ./fe/pages/**/*.js",
+    "eslint-fix": "eslint ./fe/modules/**/*.js ./fe/pages/**/*.js --fix"
   },
   "repository": {
     "type": "git",
