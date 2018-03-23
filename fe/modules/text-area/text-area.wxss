@@ -1,10 +1,19 @@
-.input-text-outter {
+.input-text-wrapper {
   padding: 0 30rpx;
   color: #999;
 }
 
 .input-text {
+  /* height: 300rpx; */
   width: 100%;
+  /* background-color: aqua;  */
+}
+
+.input-text-placeholder {
+  /* height: 270rpx; */
+  width: 100%;
+  /* padding: 15rpx 0; */
+  /* background-color: rgb(35, 156, 156);    */
 }
 
 .txt-number {

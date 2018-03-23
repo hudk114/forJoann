@@ -3,7 +3,6 @@
     "component-text-area": "../../modules/text-area/text-area",
     "component-img-list": "../../modules/img-list/img-list",
     "component-record-list": "../../modules/record-list/record-list",
-    "component-recorder": "../../modules/recorder/recorder",
-    "component-img-scroll": "../../modules/img-scroll/img-scroll"
+    "component-recorder": "../../modules/recorder/recorder"
   }
 }

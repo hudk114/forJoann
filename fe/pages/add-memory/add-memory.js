@@ -10,15 +10,29 @@ Page({
     date: '',
     nowDate: '',
     recorderShow: false,
-    memoryText: ''
+    imgScrollShow: false,
+    imgScrollIndex: 0,
+    memoryText: '',
+    isScroll: true,
+    textareaDisabled: false,
+    popUp: false
   },
   handleRecordLayoutClose () {
     this.setData({
+      isScroll: true,
+      popUp: false,
       recorderShow: false
+    })
+  },
+  handleImgScrollClose () {
+    this.setData({
+      imgScrollShow: false
     })
   },
   takeRecord () {
     this.setData({
+      isScroll: false,
+      popUp: true,
       recorderShow: true
     })
   },
@@ -38,15 +52,6 @@ Page({
     this.setData({
       recordList
     })
-  },
-  handleRecordPlay (e) {
-    const index = e.target && e.target.dataset && e.target.dataset.index
-    const iAC = wx.createInnerAudioContext()
-    iAC.src = this.data.recordList[index].tempFilePath
-    iAC.onError((err) => {
-      console.log(err)
-    })
-    iAC.play()
   },
   handleRecordDelete (e) {
     const index = e.detail.index
@@ -96,6 +101,32 @@ Page({
       }
     })
   },
+  handleImgClick (e) {
+    const index = e.detail.index
+    const imgList = this.data.imgList
+    if (index == null) {
+      return
+    }
+    if (imgList[index].type === 'img') {
+      // img 开scroll
+      // 之前的里面有视频，需要在index中去掉
+      let fixedIndex = index;
+      for (let i = 0; i < index; i++) {
+        if (imgList[i].type === 'video') {
+          fixedIndex --;
+        }
+      }
+
+      this.setData({
+        imgScrollShow: true,
+        imgScrollIndex: fixedIndex,
+        fixedImgList: imgList.filter(item => item.type === 'img')
+      })      
+    } else {
+      // TODO video 开另外的
+      
+    }
+  },
   handleImgDelete (e) {
     const index = e.detail.index
     if (index == null) {
@@ -138,5 +169,8 @@ Page({
     this.setData({
       nowDate: util.formatDate(new Date())
     })
+  },
+  onPageScroll () {
+
   }
 })

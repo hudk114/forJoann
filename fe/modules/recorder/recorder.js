@@ -11,26 +11,15 @@ Component({
       value: false
     }
   },
-  created () {
-    console.log('create')
-  },
   attached () {
     this.setData({
       recorderManager: wx.getRecorderManager()
     })
     this.data.recorderManager.onStop((tempFilePath) => {
-      console.log('onstop')
       this.triggerEvent('recordOver', {
         src: tempFilePath
       })
     })
-    console.log('attached')
-  },
-  ready () {
-    console.log('ready')
-  },
-  moved () {
-    console.log('moved')
   },
   detached () {
     this.setData({
@@ -39,7 +28,6 @@ Component({
   },
   methods: {
     handleClose () {
-      console.log('123')
       // record start will disable close
       if (this.data.recordStart) {
         return

@@ -8,6 +8,14 @@ Component({
     value: {
       type: String,
       value: ''
+    },
+    disabled: {
+      type: Boolean,
+      value: false
+    },
+    popUp: {
+      type: Boolean,
+      value: false
     }
   },
   methods: {

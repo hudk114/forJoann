@@ -1,0 +1,24 @@
+<view>
+  <component-text-area
+    value="{{memoryText}}"
+    bind:valueChange="handleTextareaChange">
+  </component-text-area>
+
+  <view class="time-content-wrapper">>
+    <view class="picker">
+      回忆时间：{{date}}
+    </view>
+  </view>
+
+  <view class="record-list-wrapper">
+    <component-record-list
+      recordList="{{recordList}}">
+    </component-record-list>
+  </view>
+
+  <view class="img-list-wrapper">
+    <component-img-list
+      imgList="{{imgList}}">
+    </component-img-list>
+  </view>
+</view>

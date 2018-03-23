@@ -1,0 +1,22 @@
+<view>
+  <view
+    catchtap="handleClose"
+    class="img-scroll-wrapper"
+    wx:if="{{show}}">
+    <swiper
+      style="margin-top: 300rpx;"
+      indicator-dots="true"
+      autoplay="true"
+      duration="500">
+      <block
+        wx:for="{{list}}"
+        wx:key="{{index}}">
+        <swiper-item>
+          <image
+            src="{{item.src}}"
+            class="slider-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>

@@ -1,11 +1,19 @@
 <view>
-  <view class="input-text-outter">
-    <textarea 
+  <view class="input-text-wrapper">
+    <!-- textarea 是原生的，层级最高，所以在弹窗的时候要将其阻塞掉  -->
+    <textarea
+      disabled="{{disabled}}"
       class="input-text"
       bindinput="handlerInput"
       maxlength="{{2000}}"
       value="{{value}}">
     </textarea>
+    <!-- TODO scroll高度 -->
+    <!-- <view
+      class="input-text-placeholder"
+      wx:if="{{!popUp}}">
+      {{value}}
+    </view> -->
     <view class="txt-number-outter">
       <view class="txt-number">{{textNum}}/2000</view>
       <view class="clear"></view>

@@ -1,5 +1,7 @@
 <view>
   <component-text-area
+    popUp="{{popUp}}"
+    disabled="{{textareaDisabled}}"
     value="{{memoryText}}"
     bind:valueChange="handleTextareaChange">
   </component-text-area>
@@ -29,14 +31,20 @@
     <component-img-list
       imgList="{{imgList}}"
       canDelete="true"
+      bind:imgClick="handleImgClick"
       bind:imgDelete="handleImgDelete">
     </component-img-list>
   </view>
   
   <view class="upload-button-outter">
-    <button type="primary" class="upload-button" bindtap="uploadMemory">上传回忆</button>
+    <button
+      type="primary"
+      class="upload-button"
+      bindtap="uploadMemory">
+      上传回忆
+    </button>
   </view>
-  
+
   <view class="upload-content">
     <view class="upload-content-item"
       bindtap="takeRecord">
@@ -57,4 +65,11 @@
     bind:recordOver="handleRecordOver"
     recorderShow="{{recorderShow}}">
   </component-recorder>
+
+  <component-img-scroll
+    bind:close="handleImgScrollClose"
+    list="{{fixedImgList}}"
+    index="{{imgScrollIndex}}"
+    show="{{imgScrollShow}}">
+  </component-img-scroll>
 </view>

@@ -15,6 +15,12 @@ Component({
       this.triggerEvent('imgDelete', {
         index
       })
+    },
+    handleTap (e) {
+      const index = e.target && e.target.dataset && e.target.dataset.index
+      this.triggerEvent('imgClick', {
+        index
+      })
     }
   }
 })

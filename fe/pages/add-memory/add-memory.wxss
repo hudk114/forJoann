@@ -24,4 +24,6 @@
 
 .upload-button-outter {
   padding: 30rpx;
+  /* 底下的高度 */
+  margin-bottom: 104rpx;
 }

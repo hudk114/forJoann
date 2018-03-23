@@ -16,11 +16,15 @@
         data-index="{{index}}" />
     </view>
     <image
+      bindtap="handleTap"
       class="camera-picture"
+      data-index="{{index}}"
       wx:if="{{img.type == 'img'}}"
       src="{{img.src}}" />
     <image
+      bindtap="handleTap"
       class="camera-picture"
+      data-index="{{index}}"
       wx:if="{{img.type == 'video'}}"
       src="./img/cover.jpg" />
   </view>
