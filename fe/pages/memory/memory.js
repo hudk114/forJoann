@@ -2,18 +2,28 @@
 Page({
   data: {
     imgList: [],
+    videoList: [],
     recordList: [],
-    date: '',
-    memoryText: ''
+    date: '2013-2-4',
+    memoryText: '没有回忆',
+    imgScrollShow: false,
+    imgScrollIndex: 0
   },
-  takeRecord () {
+  handleImgClick (e) {
+    const index = e.detail.index
+    const imgList = this.data.imgList
+    if (index == null) {
+      return
+    }
+
     this.setData({
-      recorderShow: true
+      imgScrollShow: true,
+      imgScrollIndex: index
     })
   },
-  handleTextareaChange (e) {
+  handleImgScrollClose () {
     this.setData({
-      memoryText: e.detail.value
+      imgScrollShow: false
     })
   },
   onLoad () {}

@@ -1,10 +1,11 @@
 <view>
-  <component-text-area
+  <view>{{memoryText}}</view>
+  <!-- <component-text-area
     value="{{memoryText}}"
     bind:valueChange="handleTextareaChange">
-  </component-text-area>
+  </component-text-area> -->
 
-  <view class="time-content-wrapper">>
+  <view class="time-content-wrapper">
     <view class="picker">
       回忆时间：{{date}}
     </view>
@@ -18,7 +19,22 @@
 
   <view class="img-list-wrapper">
     <component-img-list
+      bind:imgClick="handleImgClick"
       imgList="{{imgList}}">
     </component-img-list>
   </view>
+
+  <view>
+    <component-img-list
+      bind:imgClick="handleVideoClick"
+      imgList="{{videoList}}">
+    </component-img-list>
+  </view>
+
+  <component-img-scroll
+    bind:close="handleImgScrollClose"
+    list="{{imgList}}"
+    index="{{imgScrollIndex}}"
+    show="{{imgScrollShow}}">
+  </component-img-scroll>
 </view>

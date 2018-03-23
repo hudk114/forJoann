@@ -32,6 +32,19 @@ App({
         }
       }
     })
+
+    wx.getSystemInfo({
+      success (res) {
+        const device = wx.getStorageSync('device') || [];
+
+        wx.setStorageSync('device', {
+          height: res.windowHeight,
+          width: res.windowWidth,
+          model: res.model,
+          version: res.version
+        })
+      }
+    })
   },
   globalData: {
     userInfo: null
