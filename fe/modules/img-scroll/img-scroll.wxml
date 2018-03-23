@@ -1,5 +1,6 @@
 <view>
   <view
+    bind:touchmove="handleTouchmove"
     catchtap="handleClose"
     class="img-scroll-wrapper"
     wx:if="{{show}}">
@@ -11,6 +12,7 @@
         wx:for="{{list}}"
         wx:key="{{index}}">
         <swiper-item class="scroll-item">
+          <!-- TODO 用touch手动的方式 -->
           <image
             mode="aspectFit"
             src="{{item.src}}"
