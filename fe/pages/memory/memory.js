@@ -11,7 +11,7 @@ Page({
   },
   handleImgClick (e) {
     const index = e.detail.index
-    const imgList = this.data.imgList
+    // const imgList = this.data.imgList
     if (index == null) {
       return
     }
