@@ -26,6 +26,6 @@
       class="camera-picture"
       data-index="{{index}}"
       wx:if="{{img.type == 'video'}}"
-      src="./img/cover.jpg" />
+      src="./img/cover.jpeg" />
   </view>
 </view>

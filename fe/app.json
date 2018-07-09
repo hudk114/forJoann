@@ -1,7 +1,9 @@
 {
   "pages": [
-    "pages/add-memory/add-memory",        "pages/memory/memory",
+    "pages/memory/memory",
     "pages/index/index",
+    "pages/add-memory/add-memory",
+    "pages/memory/memory",
     "pages/logs/logs",
     "pages/photo/photo",
     "pages/camera/camera",

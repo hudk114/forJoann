@@ -110,10 +110,10 @@ Page({
     if (imgList[index].type === 'img') {
       // img 开scroll
       // 之前的里面有视频，需要在index中去掉
-      let fixedIndex = index;
+      let fixedIndex = index
       for (let i = 0; i < index; i++) {
         if (imgList[i].type === 'video') {
-          fixedIndex --;
+          fixedIndex--
         }
       }
 
@@ -121,10 +121,10 @@ Page({
         imgScrollShow: true,
         imgScrollIndex: fixedIndex,
         fixedImgList: imgList.filter(item => item.type === 'img')
-      })      
+      })
     } else {
       // TODO video 开另外的
-      
+
     }
   },
   handleImgDelete (e) {
